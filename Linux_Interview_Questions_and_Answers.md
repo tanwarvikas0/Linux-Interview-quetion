@@ -1517,36 +1517,9 @@ ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 5
 
 ---
 
-## Q107: Write a script to check if a directory exists and create it if not.
 
-**Answer:**
 
-```bash
-#!/bin/bash
-DIR=$1
-if [ ! -d "$DIR" ]; then
-    mkdir -p "$DIR"
-    echo "Directory $DIR created."
-else
-    echo "Directory $DIR already exists."
-fi
-```
 
----
-
-## Q108: Write a script to calculate the factorial of a given number.
-
-**Answer:**
-
-```bash
-#!/bin/bash
-factorial=1
-for (( i=1; i<=$1; i++ ))
-do
-    factorial=$((factorial * i))
-done
-echo "Factorial of $1 is $factorial"
-```
 
 ---
 
