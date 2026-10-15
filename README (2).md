@@ -205,11 +205,10 @@ A firewall controls network traffic according to rules. It helps prevent unautho
 #### Q2. What is SSH?
 SSH is a secure protocol used to connect to and administer remote systems.
 
-#### Q3. What is SELinux?
-SELinux enforces mandatory access control policies that restrict what processes and users can access.
-
-#### Q4. What is AppArmor?
-AppArmor restricts applications using profiles that specify which files and resources they can access.
+Q3. What is SELinux?
+SELinux is a Linux security feature that controls what files and resources a process can access, even if normal permissions allow it.
+Q4. What is AppArmor?
+AppArmor is a Linux security feature that restricts what an application can access using security profiles.
 
 #### Q5. Why are security patches important?
 Security patches fix known vulnerabilities and bugs. Regular updates help protect systems from attacks.
