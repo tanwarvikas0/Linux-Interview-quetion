@@ -48,6 +48,38 @@ The method depends on the distribution and network manager. On Ubuntu Server, Ne
 LVM stands for Logical Volume Manager. It allows flexible management of storage by combining physical storage into volume groups and creating logical volumes.
 
 #### Q12. How do you extend an LVM logical volume?
+Extend the logical volume
+If the volume group has at least 5 GB free:
+sudo lvextend -L +5G /dev/myvg/mylv
+
+
+To extend the logical volume and grow the filesystem automatically, use:
+sudo lvextend -r -L +5G /dev/myvg/mylv
+
+
+The -r option resizes the filesystem too, when supported.
+Step 3: If the volume group has no free space
+First, check whether a new disk is available:
+lsblk
+
+
+Example: A new disk is /dev/sdb. Confirm the disk name carefully; the following commands prepare it for LVM.
+sudo pvcreate /dev/sdb
+sudo vgextend myvg /dev/sdb
+sudo vgs
+
+
+Then extend the logical volume:
+sudo lvextend -r -L +5G /dev/myvg/mylv
+
+
+Step 4: Verify
+sudo lvs
+df -hT
+lsblk
+
+
+Interview answer: “I check free space using vgs and lvs, extend the logical volume using lvextend, resize the filesystem using -r or the appropriate filesystem tool, and verify the new size.”
 Check available space using `vgs` and `lvs`, extend the logical volume using `lvextend`, and then grow the filesystem using the appropriate tool.
 
 #### Q13. A server fails to boot. What will you do?
