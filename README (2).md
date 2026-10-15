@@ -33,12 +33,6 @@ Use tools such as `fdisk` or `parted` to create partitions, then format and moun
 #### Q7. What is the difference between ext4 and XFS?
 Both are Linux file systems. ext4 is widely used for general-purpose systems, while XFS is common on enterprise systems and supports large files and file systems.
 
-#### Q8. How do you mount a disk permanently?
-Add the filesystem's UUID and mount point to `/etc/fstab`. Test it with `sudo mount -a` before rebooting.
-
-#### Q9. How do you check disk partitions?
-Use `lsblk` to view disks and partitions, and `df -h` to check mounted filesystem usage.
-
 #### Q10. How do you configure a static IP address?
 Ubuntu (Netplan):
 sudo nano /etc/netplan/01-netcfg.yaml
@@ -75,26 +69,27 @@ Example: A new disk is /dev/sdb. Confirm the disk name carefully; the following 
 sudo pvcreate /dev/sdb
 sudo vgextend myvg /dev/sdb
 sudo vgs
-
-
 Then extend the logical volume:
 sudo lvextend -r -L +5G /dev/myvg/mylv
-
-
 Step 4: Verify
 sudo lvs
 df -hT
 lsblk
 
 
-Interview answer: “I check free space using vgs and lvs, extend the logical volume using lvextend, resize the filesystem using -r or the appropriate filesystem tool, and verify the new size.”
-Check available space using `vgs` and `lvs`, extend the logical volume using `lvextend`, and then grow the filesystem using the appropriate tool.
-
 #### Q13. A server fails to boot. What will you do?
 I will check console messages, boot logs, filesystem errors, and recent configuration changes. If necessary, I will use recovery mode to repair the problem.
 
 #### Q14. How do you upgrade the Linux kernel safely?
-Check compatibility, backups, and the supported update procedure, then install the approved kernel update. Reboot during a maintenance window and verify the new kernel and services.
+I take a backup, check compatibility, and install the kernel update using the package manager. I reboot during a maintenance window, verify the kernel version and services, and keep the previous kernel for rollback.
+Ubuntu:
+sudo apt update
+sudo apt upgrade
+sudo reboot
+uname -r
+
+
+
 
 #### Q15. How do you troubleshoot a failed filesystem mount?
 Check `lsblk`, `blkid`, `findmnt`, and system logs. Verify the UUID, filesystem type, mount point, and `/etc/fstab` configuration.
