@@ -40,6 +40,14 @@ Add the filesystem's UUID and mount point to `/etc/fstab`. Test it with `sudo mo
 Use `lsblk` to view disks and partitions, and `df -h` to check mounted filesystem usage.
 
 #### Q10. How do you configure a static IP address?
+Ubuntu (Netplan):
+sudo nano /etc/netplan/01-netcfg.yaml
+sudo netplan apply
+
+
+RHEL / Rocky Linux:
+sudo nmcli connection modify "ens160" ipv4.method manual ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns "8.8.8.8"
+sudo nmcli connection up "ens160"
 The method depends on the distribution and network manager. On Ubuntu Server, Netplan YAML configuration is commonly used.
 
 ### Advanced Level
