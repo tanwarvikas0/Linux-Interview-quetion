@@ -917,23 +917,13 @@ sudo umount /path/to/mount
 
 **Answer:**
 
-Create the file:
-
-```bash
-sudo dd if=/dev/zero of=/swapfile bs=1G count=2
-```
-
-Set permissions:
-
-```bash
-sudo chmod 600 /swapfile
-```
-
-Set up the swap space:
-
-```bash
-sudo mkswap /swapfile
-sudo swapon /swapfile
+n        # Create new partition
+p        # Primary partition (if prompted)
+Enter    # Default partition number
+Enter    # Default first sector
++2G      # Partition size
+t        # Change partition type
+L        # List types, if needed
 ```
 
 Make it persistent:
