@@ -21,17 +21,6 @@ A topic-wise collection of Linux system administration interview questions, orga
 
 ### Beginner Level
 
-#### Q1. What is Linux?
-Linux is an open-source operating system used for servers, desktops, and applications. It is known for stability, security, and flexibility.
-
-#### Q2. What is the difference between Ubuntu, Red Hat, and Kali Linux?
-Ubuntu is commonly used for servers and desktops, Red Hat for enterprise environments, and Kali Linux for penetration testing and security auditing.
-
-#### Q3. How do you check the Linux version?
-Use `cat /etc/os-release` to check the distribution and version. Use `uname -r` to check the running kernel version.
-
-#### Q4. How do you check the IP address?
-Run `ip addr` or `ip a` to display network interfaces and IP addresses.
 
 #### Q5. How do you change the hostname?
 Use `sudo hostnamectl set-hostname server01` to change the system hostname.
