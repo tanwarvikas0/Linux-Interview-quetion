@@ -100,17 +100,6 @@ Check `lsblk`, `blkid`, `findmnt`, and system logs. Verify the UUID, filesystem 
 
 ### Beginner Level
 
-#### Q1. How do you check CPU and memory usage?
-Use `top` or `htop` for processes and CPU usage, and `free -h` for memory and swap.
-
-#### Q2. How do you check disk space?
-Use `df -h` to check filesystem usage and `du -sh /path` to check directory size.
-
-#### Q3. How do you check system uptime?
-Run `uptime`. It displays system uptime and load averages.
-
-#### Q4. How do you check running processes?
-Use `ps aux` to list processes or `top` to monitor them in real time.
 
 #### Q5. What is load average?
 Load average shows the average number of tasks running or waiting for CPU or certain resources over 1, 5, and 15 minutes.
