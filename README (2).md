@@ -106,14 +106,7 @@ Load average shows the average number of tasks running or waiting for CPU or cer
 
 ### Intermediate Level
 
-#### Q6. What is Nagios?
-Nagios monitors servers, services, and network devices. It can generate alerts when monitored components fail.
 
-#### Q7. What is Zabbix?
-Zabbix monitors system health, resource usage, networks, and service availability using dashboards and alerts.
-
-#### Q8. What is Prometheus?
-Prometheus collects time-series metrics from systems and applications. It is often used with Grafana for dashboards and visualization.
 
 #### Q9. How do you identify a process using high CPU?
 Use `top` or `ps aux --sort=-%cpu | head`. Investigate the process and its workload before taking action.
